@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__.'/vercel_bootstrap.php';
+
 header('content-type: application/json');
 
 $autoload = __DIR__.'/../vendor/autoload.php';
