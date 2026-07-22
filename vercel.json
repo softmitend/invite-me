@@ -19,7 +19,7 @@
     },
     "builds": [
         {
-            "src": "api/index.php",
+            "src": "api/*.php",
             "use": "vercel-php@0.8.0"
         },
         {
