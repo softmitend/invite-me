@@ -1,0 +1,338 @@
+.catalog-thumb {
+    flex: 0 0 44px;
+    height: 44px;
+    width: 44px;
+}
+
+.catalog-thumb img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.store-progress-meter {
+    appearance: none;
+    background: #ffffff;
+    border: 1px solid #211f1f;
+    border-radius: 999px;
+    height: .75rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.store-progress-meter::-webkit-progress-bar {
+    background: #ffffff;
+}
+
+.store-progress-meter::-webkit-progress-value {
+    background: #c6d99a;
+}
+
+.store-progress-meter::-moz-progress-bar {
+    background: #c6d99a;
+}
+
+.store-header {
+    overflow-x: clip;
+}
+
+.store-header-inner,
+.store-header-actions,
+.catalog-card,
+.catalog-card-main,
+.catalog-card-body {
+    min-width: 0;
+}
+
+.store-header-actions .btn-soft,
+.store-header-actions .btn-ink,
+.catalog-modal-actions .btn-soft,
+.catalog-modal-actions .btn-ink,
+.product-actions .btn-soft,
+.product-actions .btn-ink {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.catalog-list-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.catalog-card-title {
+    overflow-wrap: anywhere;
+}
+
+.catalog-card-price,
+.catalog-modal-actions,
+.product-actions {
+    flex-wrap: wrap;
+}
+
+.catalog-modal-panel {
+    max-width: min(56rem, calc(100vw - 2rem));
+}
+
+@media (max-width: 767px) {
+    .store-header-inner {
+        align-items: flex-start;
+        gap: .75rem;
+        padding-block: .75rem;
+    }
+
+    .store-header-inner > a {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .store-header-actions {
+        display: flex;
+        gap: .45rem;
+        justify-content: flex-end;
+        min-width: 0;
+    }
+
+    .store-header-actions .btn-soft,
+    .store-header-actions .btn-ink {
+        border-radius: .75rem;
+        font-size: .78rem;
+        padding: .5rem .7rem;
+        width: auto;
+    }
+
+    .store-footer {
+        padding-block: 2rem;
+    }
+
+    .store-footer > div {
+        gap: 1.25rem;
+    }
+
+    .catalog-hero {
+        padding-block: 2rem;
+    }
+
+    .catalog-hero h1 {
+        font-size: clamp(2.5rem, 15vw, 4rem);
+        line-height: .95;
+    }
+
+    .catalog-hero p {
+        font-size: .95rem;
+    }
+
+    .catalog-page {
+        padding-block: 1.5rem;
+    }
+
+    .catalog-filter {
+        border-radius: .75rem;
+        padding: .75rem;
+    }
+
+    .catalog-search-row {
+        grid-template-columns: minmax(0, 1fr) 3rem;
+    }
+
+    .catalog-search-row .btn-ink {
+        grid-column: 1 / -1;
+        height: 2.85rem;
+        width: 100%;
+    }
+
+    .catalog-filter-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-list-grid {
+        gap: .75rem;
+        grid-template-columns: 1fr;
+        margin-top: 1rem;
+    }
+
+    .catalog-card {
+        border-radius: .75rem;
+    }
+
+    .catalog-card-main {
+        display: grid;
+        grid-template-columns: 112px minmax(0, 1fr);
+    }
+
+    .catalog-card-image {
+        aspect-ratio: 1 / 1;
+        height: 100%;
+    }
+
+    .catalog-card-body {
+        padding: .75rem;
+    }
+
+    .catalog-card-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .35rem;
+        font-size: .65rem;
+    }
+
+    .catalog-card-meta span:first-child {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .catalog-card-title {
+        font-size: 1.25rem;
+        margin-top: .55rem;
+    }
+
+    .catalog-card-price {
+        gap: .25rem .5rem;
+        margin-top: .55rem;
+    }
+
+    .catalog-card-price .text-lg {
+        font-size: .98rem;
+    }
+
+    .catalog-card-actions button {
+        padding-block: .75rem;
+    }
+
+    .cart-page {
+        padding-block: 1.5rem;
+    }
+
+    .cart-page h1 {
+        font-size: clamp(2.5rem, 14vw, 4rem);
+    }
+
+    .cart-item {
+        grid-template-columns: 88px minmax(0, 1fr);
+    }
+
+    .cart-item-image {
+        height: 88px;
+        width: 88px;
+    }
+
+    .cart-item-body {
+        min-width: 0;
+    }
+
+    .cart-item-body h2 {
+        overflow-wrap: anywhere;
+    }
+
+    .cart-item form {
+        grid-column: 1 / -1;
+    }
+
+    .cart-item .btn-soft {
+        width: 100%;
+    }
+
+    .catalog-modal {
+        align-items: stretch;
+        padding: .65rem;
+    }
+
+    .catalog-modal-panel {
+        border-radius: .75rem;
+        max-height: calc(100vh - 1.3rem);
+        max-width: none;
+    }
+
+    .catalog-modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-modal-grid > div {
+        padding: .85rem;
+    }
+
+    .catalog-modal-grid h2 {
+        font-size: 1.75rem;
+    }
+
+    .catalog-modal-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-modal-actions form,
+    .catalog-modal-actions a,
+    .catalog-modal-actions button,
+    .product-actions form,
+    .product-actions a,
+    .product-actions button,
+    .product-actions span {
+        width: 100%;
+    }
+
+    .product-detail {
+        gap: 1.25rem;
+        padding-block: 1.5rem;
+    }
+
+    .product-detail h1 {
+        font-size: clamp(2rem, 13vw, 3.5rem);
+    }
+
+    .product-detail .text-3xl {
+        font-size: 1.5rem;
+    }
+
+    .product-detail [aria-label^="Gambar"] {
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+
+    .product-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .paper-grid .text-6xl,
+    section .text-6xl {
+        font-size: clamp(2.5rem, 14vw, 4rem);
+    }
+
+    section .text-5xl {
+        font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    section .text-4xl {
+        font-size: clamp(1.75rem, 9vw, 2.25rem);
+    }
+
+    section .text-3xl {
+        font-size: clamp(1.4rem, 7vw, 1.875rem);
+    }
+
+    .btn-ink,
+    .btn-soft {
+        border-radius: .75rem;
+    }
+
+    main section {
+        overflow-x: clip;
+    }
+
+    main img {
+        max-width: 100%;
+    }
+
+    main .rounded-lg {
+        border-radius: .75rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .catalog-list-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

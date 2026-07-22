@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        background: #fffdf5;
+        color: #211f1f;
+    }
+}
+
+@layer components {
+    .paper-grid {
+        background-color: #fffdf5;
+        background-image:
+            linear-gradient(rgba(33, 31, 31, .08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(33, 31, 31, .08) 1px, transparent 1px);
+        background-size: 22px 22px;
+    }
+
+    .display-serif {
+        font-family: Georgia, 'Times New Roman', serif;
+        letter-spacing: 0;
+    }
+
+    .ink-border {
+        border: 1px solid #211f1f;
+    }
+
+    .btn-ink {
+        border: 1px solid #211f1f;
+        background: #211f1f;
+        color: #fffdf5;
+        border-radius: 999px;
+        padding: .75rem 1.1rem;
+        font-weight: 700;
+    }
+
+    .btn-soft {
+        border: 1px solid #211f1f;
+        background: #f7b1c8;
+        color: #211f1f;
+        border-radius: 999px;
+        padding: .65rem 1rem;
+        font-weight: 700;
+    }
+
+    .field {
+        width: 100%;
+        border: 1px solid #211f1f;
+        border-radius: 8px;
+        background: #fffdf5;
+        padding: .75rem .9rem;
+    }
+}

@@ -1,0 +1,325 @@
+.admin-dashboard {
+    color: #1f2937;
+}
+
+.admin-dashboard .dash-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(31, 41, 55, .06);
+}
+
+.dashboard-header .field {
+    min-height: 41px;
+}
+
+.dashboard-controls {
+    display: grid;
+    gap: .55rem;
+    min-width: 0;
+}
+
+.dashboard-filter {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: minmax(150px, 1fr) minmax(130px, .75fr) minmax(130px, .75fr) auto;
+    min-width: 0;
+}
+
+.dashboard-filter .btn-ink,
+.quick-actions .btn-ink,
+.quick-actions .btn-soft {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    min-height: 41px;
+    white-space: nowrap;
+}
+
+.quick-actions {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    min-width: 0;
+}
+
+.summary-grid {
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+}
+
+.summary-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #6b7280;
+    border-radius: 12px;
+    color: #1f2937;
+    min-height: 132px;
+    padding: 1rem;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.summary-card:hover,
+.summary-card:focus {
+    box-shadow: 0 12px 32px rgba(31, 41, 55, .1);
+    outline: 0;
+    transform: translateY(-1px);
+}
+
+.summary-blue {
+    border-left-color: #0d6efd;
+}
+
+.summary-yellow {
+    border-left-color: #f59e0b;
+}
+
+.summary-orange {
+    border-left-color: #f97316;
+}
+
+.summary-red {
+    border-left-color: #dc3545;
+}
+
+.summary-green {
+    border-left-color: #198754;
+}
+
+.summary-icon {
+    align-items: center;
+    background: #f3f4f6;
+    border-radius: 8px;
+    display: inline-flex;
+    font-size: .8rem;
+    font-weight: 800;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+}
+
+.summary-delta {
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 800;
+    padding: .2rem .55rem;
+}
+
+.summary-description {
+    color: #6b7280;
+    display: -webkit-box;
+    font-size: .72rem;
+    line-height: 1.35;
+    margin-top: .45rem;
+    min-height: 2rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.summary-delta.is-up {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.summary-delta.is-down {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.section-heading {
+    align-items: center;
+    border-bottom: 1px solid #edf2f7;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1.25rem;
+}
+
+.section-kicker {
+    color: #9ca3af;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.section-title {
+    color: #1f2937;
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+.admin-dashboard .dashboard-table th {
+    background: #ffffff !important;
+    border-bottom: 1px solid #edf2f7;
+    color: #9ca3af;
+    font-size: 11px;
+    letter-spacing: .04em;
+    padding: 12px 16px;
+    text-transform: uppercase;
+}
+
+.admin-dashboard .dashboard-table td {
+    border-top: 1px solid #f1f5f9;
+    padding: 14px 16px;
+}
+
+.badge-soft {
+    border: 1px solid transparent;
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: .72rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: .42rem .65rem;
+    white-space: nowrap;
+}
+
+.badge-neutral {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+    color: #495057;
+}
+
+.badge-blue {
+    background: #cfe2ff;
+    border-color: #b6d4fe;
+    color: #084298;
+}
+
+.badge-yellow {
+    background: #fff3cd;
+    border-color: #ffecb5;
+    color: #664d03;
+}
+
+.badge-orange {
+    background: #ffe5d0;
+    border-color: #fed7aa;
+    color: #9a3412;
+}
+
+.badge-red {
+    background: #f8d7da;
+    border-color: #f5c2c7;
+    color: #842029;
+}
+
+.badge-green {
+    background: #d1e7dd;
+    border-color: #badbcc;
+    color: #0f5132;
+}
+
+.empty-state {
+    background: #f8f9fa;
+    border: 1px dashed #ced4da;
+    border-radius: .75rem;
+    color: #6c757d;
+    font-weight: 700;
+    padding: 1rem;
+    text-align: center;
+}
+
+.metric-tab {
+    border: 1px solid #dee2e6;
+    border-radius: 999px;
+    color: #6b7280;
+    font-size: .75rem;
+    font-weight: 800;
+    padding: .45rem .7rem;
+}
+
+.metric-tab.is-active {
+    background: #0d6efd;
+    border-color: #0d6efd;
+    color: #ffffff;
+}
+
+.chart-scroll {
+    overflow-x: auto;
+}
+
+.dashboard-chart {
+    height: 280px;
+    min-width: 100%;
+    width: 100%;
+}
+
+.finance-row {
+    align-items: center;
+    border: 1px solid #edf2f7;
+    border-radius: .75rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .9rem;
+}
+
+.finance-row span {
+    color: #6b7280;
+    font-weight: 700;
+}
+
+.finance-row strong {
+    color: #1f2937;
+    font-weight: 900;
+    text-align: right;
+}
+
+.top-catalog {
+    align-items: center;
+    border: 1px solid #edf2f7;
+    border-radius: .85rem;
+    display: flex;
+    gap: .85rem;
+    padding: .85rem;
+}
+
+.top-catalog img,
+.top-catalog-empty {
+    border-radius: .75rem;
+    height: 52px;
+    object-fit: cover;
+    width: 52px;
+}
+
+.top-catalog-empty {
+    align-items: center;
+    background: #eef2ff;
+    color: #4f46e5;
+    display: inline-flex;
+    font-weight: 900;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .dashboard-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions a {
+        justify-content: center;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+    .dashboard-filter {
+        grid-template-columns: minmax(150px, 1fr) 1fr 1fr auto;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
