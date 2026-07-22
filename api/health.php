@@ -32,6 +32,9 @@ $result = [
     'encrypter_ok' => false,
     'db_ok' => false,
     'home_queries_ok' => false,
+    'vite_manifest_exists' => is_file(__DIR__.'/../public/build/manifest.json'),
+    'home_render_ok' => false,
+    'home_render_status' => null,
 ];
 
 try {
@@ -65,6 +68,15 @@ try {
             $result['home_queries_ok'] = true;
         } catch (Throwable $exception) {
             $result['home_queries_error'] = $exception::class.': '.$exception->getMessage();
+        }
+
+        try {
+            $request = Illuminate\Http\Request::create('/', 'GET');
+            $response = $app->handle($request);
+            $result['home_render_status'] = $response->getStatusCode();
+            $result['home_render_ok'] = $response->getStatusCode() < 500;
+        } catch (Throwable $exception) {
+            $result['home_render_error'] = $exception::class.': '.$exception->getMessage();
         }
     }
 } catch (Throwable $exception) {
