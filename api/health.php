@@ -14,7 +14,7 @@ foreach (($packages['packages'] ?? []) as $package) {
     }
 }
 
-echo json_encode([
+$result = [
     'ok' => true,
     'php_version' => PHP_VERSION,
     'sapi' => PHP_SAPI,
@@ -26,4 +26,47 @@ echo json_encode([
     'db_connection' => getenv('DB_CONNECTION') ?: null,
     'db_url_present' => (bool) getenv('DB_URL'),
     'db_host_present' => (bool) getenv('DB_HOST'),
-], JSON_PRETTY_PRINT);
+    'laravel_boot' => false,
+    'encrypter_ok' => false,
+    'db_ok' => false,
+    'home_queries_ok' => false,
+];
+
+try {
+    if (is_file($autoload)) {
+        require_once $autoload;
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+        $kernel->bootstrap();
+
+        $result['laravel_boot'] = true;
+
+        try {
+            $app->make('encrypter');
+            $result['encrypter_ok'] = true;
+        } catch (Throwable $exception) {
+            $result['encrypter_error'] = $exception::class.': '.$exception->getMessage();
+        }
+
+        try {
+            $app->make('db')->connection()->select('select 1 as ok');
+            $result['db_ok'] = true;
+        } catch (Throwable $exception) {
+            $result['db_error'] = $exception::class.': '.$exception->getMessage();
+        }
+
+        try {
+            App\Models\Category::where('is_active', true)->count();
+            App\Models\Catalog::where('is_active', true)->count();
+            App\Models\Review::where('is_visible', true)->count();
+            $result['home_queries_ok'] = true;
+        } catch (Throwable $exception) {
+            $result['home_queries_error'] = $exception::class.': '.$exception->getMessage();
+        }
+    }
+} catch (Throwable $exception) {
+    $result['laravel_error'] = $exception::class.': '.$exception->getMessage();
+}
+
+echo json_encode($result, JSON_PRETTY_PRINT);
