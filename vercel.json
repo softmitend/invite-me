@@ -45,6 +45,10 @@
             "dest": "/public/favicon.ico"
         },
         {
+            "src": "/_health",
+            "dest": "/api/health.php"
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
